@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<!-- skill:libraries -->
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js" integrity="sha384-wHFvAtjmgnkA2PJcMsDaCgdipf7X7YV44X/igbLHpvGiq6T5/PvFKl93grpvtbQT" crossorigin="anonymous"></script>
+<script>document.addEventListener("DOMContentLoaded",()=>lucide.createIcons())</script>
+<!-- /skill:libraries -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>DentalCare Maputo | Clínica Dentária Premium em Maputo, Moçambique</title>
+<meta name="description" content="Clínica dentária moderna em Maputo, Moçambique. Implantes dentários, ortodontia, branqueamento e odontologia estética com tecnologia avançada. Marque a sua consulta hoje.">
+<meta name="keywords" content="clínica dentária em Maputo, dentista em Maputo, implantes dentários Maputo, ortodontia Maputo, branqueamento dentário Moçambique, DentalCare Maputo">
+<meta name="author" content="DentalCare Maputo">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="MZ">
+<meta name="geo.placename" content="Maputo">
+<link rel="canonical" href="https://www.dentalcaremaputo.co.mz/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DentalCare Maputo | Clínica Dentária Premium em Maputo">
+<meta property="og:description" content="O seu sorriso merece o melhor cuidado. Clínica dentária moderna em Maputo com tecnologia avançada e atendimento personalizado.">
+<meta property="og:locale" content="pt_MZ">
+<meta property="og:image" content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Structured data for local SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "DentalCare Maputo",
+  "description": "Clínica dentária premium em Maputo, Moçambique.",
+  "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+  "telephone": "+258841234567",
+  "email": "ola@dentalcaremaputo.co.mz",
+  "url": "https://www.dentalcaremaputo.co.mz/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Julius Nyerere, nº 657, Bairro Polana",
+    "addressLocality": "Maputo",
+    "addressCountry": "MZ"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -25.9666, "longitude": 32.5833 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+  ],
+  "priceRange": "$$"
+}
+</script>
+
+<style>
+  :root {
+    /* Blue-tinted palette in OKLCH */
+    --navy-900: oklch(0.24 0.055 252);
+    --navy-800: oklch(0.31 0.062 252);
+    --navy-700: oklch(0.40 0.070 250);
+    --azure-600: oklch(0.60 0.135 240);
+    --azure-500: oklch(0.68 0.130 236);
+    --azure-400: oklch(0.78 0.095 232);
+    --azure-100: oklch(0.94 0.028 232);
+    --azure-50:  oklch(0.975 0.014 234);
+
+    --ink:      oklch(0.26 0.025 252);
+    --ink-soft: oklch(0.46 0.022 250);
+    --ink-mute: oklch(0.60 0.018 248);
+
+    --surface:  oklch(0.995 0.004 240);
+    --surface-2:oklch(0.978 0.008 238);
+    --line:     oklch(0.915 0.012 240);
+    --line-soft:oklch(0.945 0.010 240);
+    --white:    oklch(0.995 0.003 240);
+
+    --green:    oklch(0.62 0.16 150);
+    --green-dk: oklch(0.55 0.16 150);
+    --gold:     oklch(0.78 0.14 85);
+
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+    --space-2xl: 8rem;
+
+    --maxw: 1200px;
+    --radius: 18px;
+    --radius-sm: 12px;
+    --radius-lg: 28px;
+
+    --shadow-sm: 0 1px 2px oklch(0.3 0.04 252 / 0.05), 0 2px 8px oklch(0.3 0.04 252 / 0.04);
+    --shadow-md: 0 8px 30px oklch(0.3 0.04 252 / 0.08);
+    --shadow-lg: 0 24px 60px oklch(0.28 0.05 252 / 0.14);
+
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+
+  body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--surface);
+    line-height: 1.65;
+    font-size: 1.0625rem;
+    -webkit-font-smoothing: antialiased;
+    font-optical-sizing: auto;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: var(--navy-900);
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  ::selection { background: var(--azure-100); color: var(--navy-900); }
+
+  :focus-visible { outline: 3px solid var(--azure-500); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: 1.75rem; }
+
+  .eyebrow {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--azure-600);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px; height: 1.5px;
+    background: var(--azure-500);
+    display: inline-block;
+  }
+
+  .section { padding-block: var(--space-2xl); }
+  .section-head { max-width: 60ch; margin-bottom: var(--space-lg); }
+  .section-head h2 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    margin-top: 1rem;
+  }
+  .section-head p {
+    color: var(--ink-soft);
+    font-size: 1.125rem;
+    margin-top: 1.1rem;
+    max-width: 58ch;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 0.95rem 1.7rem;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: transform 0.35s var(--ease-out-quint), background 0.3s ease, box-shadow 0.35s var(--ease-out-quint), color 0.3s ease;
+    white-space: nowrap;
+  }
+  .btn:active { transform: translateY(0) scale(0.98); }
+  .btn i { width: 18px; height: 18px; }
+  .btn-primary {
+    background: var(--navy-900);
+    color: var(--azure-50);
+    box-shadow: 0 10px 24px oklch(0.24 0.055 252 / 0.28);
+  }
+  .btn-primary:hover { background: var(--navy-800); transform: translateY(-2px); box-shadow: 0 16px 34px oklch(0.24 0.055 252 / 0.34); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--navy-900);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--navy-900); transform: translateY(-2px); background: var(--white); }
+  .btn-whats { background: var(--green); color: white; box-shadow: 0 10px 24px oklch(0.62 0.16 150 / 0.28); }
+  .btn-whats:hover { background: var(--green-dk); transform: translateY(-2px); }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    transition: background 0.4s var(--ease-out-quint), box-shadow 0.4s var(--ease-out-quint), padding 0.4s var(--ease-out-quint);
+    padding-block: 1.25rem;
+  }
+  header.nav.scrolled {
+    background: oklch(0.995 0.004 240 / 0.86);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 var(--line-soft);
+    padding-block: 0.7rem;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 0.65rem; font-family: "Fraunces", serif; font-weight: 600; font-size: 1.32rem; color: var(--navy-900); letter-spacing: -0.02em; }
+  .brand .mark {
+    width: 38px; height: 38px; border-radius: 11px;
+    background: linear-gradient(135deg, var(--navy-800), var(--azure-600));
+    display: grid; place-items: center; color: white;
+    box-shadow: var(--shadow-sm);
+  }
+  .brand .mark i { width: 21px; height: 21px; }
+  .brand small { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.22em; color: var(--azure-600); text-transform: uppercase; margin-top: -3px; }
+
+  nav.links { display: flex; align-items: center; gap: 2rem; }
+  nav.links a { font-size: 0.94rem; font-weight: 500; color: var(--ink-soft); transition: color 0.25s ease; position: relative; }
+  nav.links a::after { content:""; position:absolute; left:0; bottom:-6px; height:1.5px; width:0; background:var(--azure-600); transition: width 0.3s var(--ease-out-quint); }
+  nav.links a:hover { color: var(--navy-900); }
+  nav.links a:hover::after, nav.links a.active::after { width: 100%; }
+  nav.links a.active { color: var(--navy-900); }
+  .nav-cta { display: flex; align-items: center; gap: 0.85rem; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy-900); }
+
+  /* ---------- HERO ---------- */
+  .hero { position: relative; padding-top: 9.5rem; padding-bottom: var(--space-2xl); overflow: hidden; }
+  .hero::before {
+    content:""; position:absolute; top:-30%; right:-15%; width:60vw; height:60vw;
+    background: radial-gradient(circle, var(--azure-100), transparent 62%);
+    z-index: -1;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 4.5rem; align-items: center; }
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+    margin-block: 1.4rem 1.5rem;
+  }
+  .hero-copy h1 em { font-style: italic; color: var(--azure-600); }
+  .hero-copy .lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 46ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; }
+  .hero-trust { display: flex; align-items: center; gap: 1.6rem; margin-top: 2.6rem; flex-wrap: wrap; }
+  .hero-trust .stars { display:flex; gap:2px; color: var(--gold); }
+  .hero-trust .stars i { width:17px; height:17px; fill: currentColor; }
+  .hero-trust .t-text { font-size: 0.92rem; color: var(--ink-soft); }
+  .hero-trust .t-text b { color: var(--navy-900); }
+  .hero-trust .divider { width:1px; height:34px; background: var(--line); }
+
+  .hero-media { position: relative; }
+  .hero-media .frame {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 4/4.6;
+    background: var(--azure-100);
+  }
+  .hero-media .frame img { width:100%; height:100%; object-fit: cover; }
+  .hero-badge {
+    position: absolute; left: -1.8rem; bottom: 2.4rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.35rem;
+    box-shadow: var(--shadow-lg);
+    display: flex; align-items: center; gap: 0.95rem;
+    max-width: 260px;
+  }
+  .hero-badge .ic { width: 46px; height: 46px; border-radius: 12px; background: var(--azure-50); color: var(--azure-600); display:grid; place-items:center; flex-shrink:0; }
+  .hero-badge .ic i { width: 24px; height: 24px; }
+  .hero-badge b { font-family:"Fraunces",serif; font-size: 1.2rem; color: var(--navy-900); display:block; }
+  .hero-badge span { font-size: 0.82rem; color: var(--ink-mute); }
+  .hero-badge.top { left: auto; right: -1.5rem; top: 2rem; bottom: auto; }
+
+  /* ---------- STRIP ---------- */
+  .strip { border-block: 1px solid var(--line-soft); background: var(--surface-2); }
+  .strip .wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: 1.6rem; flex-wrap: wrap; }
+  .strip .item { display:flex; align-items:center; gap: 0.7rem; color: var(--ink-soft); font-size: 0.92rem; font-weight: 500; }
+  .strip .item i { width: 20px; height: 20px; color: var(--azure-600); }
+
+  /* ---------- SOBRE ---------- */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+  .about-media { position: relative; }
+  .about-media .m1 { border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-md); aspect-ratio: 5/6; background: var(--azure-100); }
+  .about-media .m1 img { width:100%; height:100%; object-fit: cover; }
+  .about-media .m2 { position:absolute; right:-1.5rem; bottom:-1.8rem; width: 46%; border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow-lg); border: 5px solid var(--white); aspect-ratio: 1/1; background: var(--azure-100); }
+  .about-media .m2 img { width:100%; height:100%; object-fit: cover; }
+  .about-copy h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); }
+  .about-copy p { color: var(--ink-soft); margin-top: 1.2rem; font-size: 1.08rem; }
+  .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.4rem; border-top: 1px solid var(--line); padding-top: 2rem; }
+  .about-stats .n { font-family:"Fraunces",serif; font-size: 2.3rem; color: var(--navy-900); font-weight: 600; }
+  .about-stats .l { font-size: 0.88rem; color: var(--ink-mute); margin-top: 0.2rem; }
+
+  /* ---------- SERVIÇOS ---------- */
+  #servicos { background: var(--surface-2); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.35rem; }
+  .svc {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.9rem 1.7rem 1.8rem;
+    transition: transform 0.4s var(--ease-out-quint), box-shadow 0.4s var(--ease-out-quint), border-color 0.3s ease;
+    position: relative;
+  }
+  .svc:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--azure-400); }
+  .svc .ic { width: 56px; height: 56px; border-radius: 15px; background: linear-gradient(140deg, var(--azure-50), var(--azure-100)); color: var(--azure-600); display:grid; place-items:center; margin-bottom: 1.3rem; transition: background 0.35s ease, color 0.35s ease; }
+  .svc:hover .ic { background: var(--navy-900); color: var(--azure-50); }
+  .svc .ic i { width: 27px; height: 27px; }
+  .svc h3 { font-size: 1.28rem; }
+  .svc p { font-size: 0.95rem; color: var(--ink-soft); margin-top: 0.55rem; }
+  .svc .num { position:absolute; top:1.6rem; right:1.7rem; font-family:"Fraunces",serif; font-size:0.95rem; color: var(--line); font-weight:600; }
+
+  /* ---------- POR QUE ESCOLHER ---------- */
+  #porque { background: var(--navy-900); color: var(--azure-50); position: relative; overflow: hidden; }
+  #porque::before { content:""; position:absolute; top:-20%; left:-10%; width:45vw; height:45vw; background: radial-gradient(circle, oklch(0.4 0.09 245 / 0.5), transparent 65%); }
+  #porque .eyebrow { color: var(--azure-400); }
+  #porque .eyebrow::before { background: var(--azure-400); }
+  .why-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4.5rem; align-items: center; position: relative; }
+  .why-media { border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/5; background: oklch(0.31 0.062 252); }
+  .why-media img { width:100%; height:100%; object-fit: cover; }
+  .why-copy h2 { color: var(--white); font-size: clamp(2rem, 3.6vw, 2.9rem); }
+  .why-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2rem; margin-top: 2.4rem; }
+  .why-item { display: flex; gap: 1rem; }
+  .why-item .ic { width: 44px; height: 44px; flex-shrink:0; border-radius: 12px; background: oklch(0.4 0.09 245 / 0.4); color: var(--azure-400); display:grid; place-items:center; }
+  .why-item .ic i { width: 22px; height: 22px; }
+  .why-item h4 { color: var(--white); font-family:"Plus Jakarta Sans",sans-serif; font-size: 1.02rem; font-weight: 600; }
+  .why-item p { color: oklch(0.82 0.03 240); font-size: 0.9rem; margin-top: 0.25rem; line-height: 1.55; }
+
+  /* ---------- GALERIA ---------- */
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 1rem; }
+  .gallery figure { overflow: hidden; border-radius: var(--radius-sm); position: relative; background: var(--azure-100); margin: 0; }
+  .gallery img { width:100%; height:100%; object-fit: cover; transition: transform 0.7s var(--ease-out-quint); }
+  .gallery figure:hover img { transform: scale(1.06); }
+  .gallery .tall { grid-row: span 2; }
+  .gallery .wide { grid-column: span 2; }
+
+  /* ---------- TESTEMUNHOS ---------- */
+  #testemunhos { background: var(--surface-2); }
+  .tst-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .tst {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 2rem 1.9rem;
+    display: flex; flex-direction: column;
+  }
+  .tst .stars { display:flex; gap:2px; color: var(--gold); margin-bottom: 1rem; }
+  .tst .stars i { width:17px; height:17px; fill: currentColor; }
+  .tst blockquote { font-size: 1.05rem; color: var(--ink); line-height: 1.65; flex: 1; }
+  .tst .who { display:flex; align-items:center; gap: 0.85rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line-soft); }
+  .tst .who .av { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; background: var(--navy-800); color: white; display:grid; place-items:center; font-family:"Fraunces",serif; font-size:1.1rem; flex-shrink:0; }
+  .tst .who b { display:block; font-size: 0.98rem; color: var(--navy-900); }
+  .tst .who span { font-size: 0.85rem; color: var(--ink-mute); }
+
+  /* ---------- PROCESSO ---------- */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+  .step { text-align: left; }
+  .step .n { font-family:"Fraunces",serif; font-size: 3.4rem; font-weight: 600; color: var(--azure-100); line-height: 1; }
+  .step .ic { width: 54px; height: 54px; border-radius: 14px; background: var(--navy-900); color: var(--azure-50); display:grid; place-items:center; margin: 1.1rem 0 1.2rem; }
+  .step .ic i { width: 26px; height: 26px; }
+  .step h3 { font-size: 1.4rem; }
+  .step p { color: var(--ink-soft); margin-top: 0.5rem; }
+
+  /* ---------- FAQ + FORM ---------- */
+  #contacto-faq { background: var(--surface-2); }
+  .faq-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-q { width:100%; text-align:left; background:none; border:none; cursor:pointer; padding: 1.4rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem; font-family:"Plus Jakarta Sans",sans-serif; font-size: 1.08rem; font-weight: 600; color: var(--navy-900); }
+  .faq-q i { width:20px; height:20px; color: var(--azure-600); transition: transform 0.4s var(--ease-out-quint); flex-shrink:0; }
+  .faq-item.open .faq-q i { transform: rotate(45deg); }
+  .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s var(--ease-out-quint); }
+  .faq-item.open .faq-a { grid-template-rows: 1fr; }
+  .faq-a > div { overflow: hidden; }
+  .faq-a p { color: var(--ink-soft); padding-bottom: 1.4rem; font-size: 0.98rem; }
+
+  .form-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 2.4rem; box-shadow: var(--shadow-md); }
+  .form-card h3 { font-size: 1.6rem; }
+  .form-card > form > p { color: var(--ink-soft); margin-top: 0.5rem; font-size: 0.98rem; margin-bottom: 1.6rem; }
+  .field { margin-bottom: 1.1rem; }
+  .field label { display:block; font-size: 0.85rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 0.45rem; }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 0.85rem 1rem; border: 1.5px solid var(--line); border-radius: var(--radius-sm);
+    font-family: inherit; font-size: 0.98rem; color: var(--ink); background: var(--surface);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--azure-500); box-shadow: 0 0 0 3px var(--azure-100);
+  }
+  .field input:user-invalid, .field select:user-invalid {
+    border-color: oklch(0.6 0.19 25);
+  }
+  .field textarea { resize: vertical; min-height: 90px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-card .btn { width: 100%; justify-content: center; margin-top: 0.5rem; }
+  .form-note { font-size: 0.8rem; color: var(--ink-mute); text-align: center; margin-top: 1rem; }
+  .form-success { display:none; text-align:center; padding: 2rem 0; }
+  .form-success.show { display: block; animation: fadeUp 0.6s var(--ease-out-quint); }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform:none; } }
+  .form-success .ic { width:64px; height:64px; border-radius:50%; background: oklch(0.62 0.16 150 / 0.12); color: var(--green-dk); display:grid; place-items:center; margin: 0 auto 1.2rem; }
+  .form-success .ic i { width: 32px; height: 32px; }
+
+  /* ---------- CONTACTOS ---------- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; align-items: stretch; }
+  .contact-info { display: flex; flex-direction: column; gap: 1.3rem; }
+  .cinfo { display:flex; gap: 1.1rem; align-items: flex-start; }
+  .cinfo .ic { width: 50px; height: 50px; flex-shrink:0; border-radius: 13px; background: var(--azure-50); color: var(--azure-600); display:grid; place-items:center; }
+  .cinfo .ic i { width: 24px; height: 24px; }
+  .cinfo h4 { font-family:"Plus Jakarta Sans",sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-mute); }
+  .cinfo p { color: var(--navy-900); font-weight: 500; margin-top: 0.15rem; }
+  .cinfo p a:hover { color: var(--azure-600); }
+  .map-frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); min-height: 420px; border: 1px solid var(--line); }
+  .map-frame iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--navy-900); color: oklch(0.82 0.03 240); padding-block: var(--space-xl) var(--space-md); }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid oklch(0.4 0.06 250 / 0.4); }
+  footer .brand { color: white; }
+  footer .brand small { color: var(--azure-400); }
+  .foot-about { margin-top: 1.2rem; font-size: 0.94rem; line-height: 1.65; max-width: 34ch; }
+  .foot-social { display:flex; gap: 0.7rem; margin-top: 1.4rem; }
+  .foot-social a { width: 40px; height: 40px; border-radius: 11px; background: oklch(0.4 0.06 250 / 0.4); display:grid; place-items:center; color: var(--azure-50); transition: background 0.3s ease, transform 0.3s var(--ease-out-quint); }
+  .foot-social a:hover { background: var(--azure-600); transform: translateY(-3px); }
+  .foot-social a i { width: 19px; height: 19px; }
+  footer h5 { color: white; font-family:"Plus Jakarta Sans",sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.2rem; }
+  .foot-links { display:flex; flex-direction: column; gap: 0.7rem; }
+  .foot-links a { font-size: 0.94rem; transition: color 0.25s ease; }
+  .foot-links a:hover { color: white; }
+  .foot-contact { list-style: none; }
+  .foot-contact li { display:flex; gap:0.7rem; align-items:flex-start; font-size: 0.94rem; margin-bottom: 0.8rem; }
+  .foot-contact i { width: 17px; height: 17px; color: var(--azure-400); flex-shrink:0; margin-top: 3px; }
+  .foot-bottom { display:flex; justify-content: space-between; align-items:center; padding-top: 1.8rem; font-size: 0.85rem; color: oklch(0.68 0.03 245); flex-wrap: wrap; gap: 0.8rem; }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .fab {
+    position: fixed; right: 1.6rem; bottom: 1.6rem; z-index: 90;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--green); color: white;
+    display: grid; place-items: center;
+    box-shadow: 0 12px 30px oklch(0.62 0.16 150 / 0.4);
+    transition: transform 0.4s var(--ease-out-quint);
+  }
+  .fab:hover { transform: scale(1.08) translateY(-2px); }
+  .fab i { width: 30px; height: 30px; }
+  .fab::after {
+    content:""; position:absolute; inset:0; border-radius:50%;
+    border: 2px solid oklch(0.62 0.16 150 / 0.5);
+    animation: ping 2.4s var(--ease-out-expo) infinite;
+  }
+  @keyframes ping { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.7); opacity: 0; } }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint); transition-delay: calc(var(--d, 0) * 1ms); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+    .fab::after { display: none; }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1024px) {
+    .hero-grid, .about-grid, .why-grid, .faq-form-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .why-grid { gap: 3rem; }
+    .hero-media { max-width: 480px; }
+    .about-media { max-width: 460px; }
+    .why-media { max-width: 460px; order: -1; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 2.4rem; }
+  }
+  @media (max-width: 760px) {
+    :root { --space-2xl: 5rem; }
+    nav.links, .nav-cta .btn-ghost, .nav-cta .btn-primary { display: none; }
+    .nav-toggle { display: grid; place-items: center; }
+    .mobile-menu { position: fixed; inset: 0 0 auto 0; top: 0; background: var(--white); z-index: 200; padding: 6rem 1.75rem 2rem; transform: translateY(-110%); transition: transform 0.45s var(--ease-out-quint); box-shadow: var(--shadow-lg); }
+    .mobile-menu.open { transform: none; }
+    .mobile-menu a { display:block; font-size: 1.2rem; font-weight: 500; padding: 0.9rem 0; border-bottom: 1px solid var(--line-soft); color: var(--navy-900); font-family:"Fraunces",serif; }
+    .mobile-menu .btn { width:100%; justify-content:center; margin-top: 1.5rem; border-bottom: none; }
+    .mobile-close { position: absolute; top: 1.5rem; right: 1.75rem; background:none; border:none; cursor:pointer; color: var(--navy-900); }
+    .hero-badge { display: none; }
+    .about-stats { grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+    .about-stats .n { font-size: 1.8rem; }
+    .about-media .m2 { width: 42%; }
+    .why-list { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+    .gallery .wide { grid-column: span 2; }
+    .steps { grid-template-columns: 1fr; gap: 2.4rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .foot-bottom { flex-direction: column; text-align: center; }
+    .section-head h2 { font-size: 2rem; }
+  }
+  @media (max-width: 420px) {
+    .hero-actions { flex-direction: column; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+    .about-stats { grid-template-columns: 1fr; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#inicio" class="brand" aria-label="DentalCare Maputo, ir para o início">
+      <span class="mark"><i data-lucide="sparkles"></i></span>
+      <span>DentalCare<small>Maputo</small></span>
+    </a>
+    <nav class="links" id="navLinks" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#porque">Porquê nós</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#testemunhos">Testemunhos</a>
+      <a href="#contacto">Contactos</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://wa.me/258841234567" class="btn btn-ghost" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>WhatsApp</a>
+      <a href="#marcacao" class="btn btn-primary"><i data-lucide="calendar-check"></i>Marcar Consulta</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu" style="width:26px;height:26px;"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Fechar menu"><i data-lucide="x" style="width:28px;height:28px;"></i></button>
+  <a href="#sobre">Sobre a Clínica</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#porque">Porquê nós</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#testemunhos">Testemunhos</a>
+  <a href="#contacto">Contactos</a>
+  <a href="#marcacao" class="btn btn-primary"><i data-lucide="calendar-check"></i>Marcar Consulta</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Clínica Dentária Premium · Maputo</span>
+      <h1 class="reveal" style="--d:80">O seu sorriso merece <em>o melhor cuidado.</em></h1>
+      <p class="lead reveal" style="--d:160">Na DentalCare Maputo unimos profissionais experientes, tecnologia de ponta e um atendimento verdadeiramente humano. Cuidamos da sua saúde oral com rigor, conforto e resultados que se veem.</p>
+      <div class="hero-actions reveal" style="--d:240">
+        <a href="#marcacao" class="btn btn-primary"><i data-lucide="calendar-check"></i>Marcar Consulta</a>
+        <a href="https://wa.me/258841234567" class="btn btn-whats" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>Falar no WhatsApp</a>
+      </div>
+      <div class="hero-trust reveal" style="--d:320">
+        <div>
+          <div class="stars" aria-hidden="true"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <div class="t-text"><b>4,9/5</b> · mais de 1.200 pacientes</div>
+        </div>
+        <div class="divider"></div>
+        <div class="t-text"><b>+12 anos</b><br>a cuidar de sorrisos em Maputo</div>
+      </div>
+    </div>
+    <div class="hero-media reveal" style="--d:200">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80" alt="Dentista da DentalCare Maputo a atender uma paciente numa clínica moderna" loading="eager" width="900" height="1035">
+      </div>
+      <div class="hero-badge">
+        <div class="ic"><i data-lucide="shield-check"></i></div>
+        <div><b>Segurança total</b><span>Esterilização e higiene certificadas</span></div>
+      </div>
+      <div class="hero-badge top">
+        <div class="ic"><i data-lucide="smile"></i></div>
+        <div><b>Sem dor</b><span>Técnicas modernas e conforto</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STRIP ============ -->
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><i data-lucide="award"></i>Profissionais certificados</div>
+    <div class="item"><i data-lucide="scan-line"></i>Radiografia digital</div>
+    <div class="item"><i data-lucide="clock"></i>Aberto de segunda a sábado</div>
+    <div class="item"><i data-lucide="credit-card"></i>Planos de pagamento flexíveis</div>
+    <div class="item"><i data-lucide="map-pin"></i>Bairro da Polana, Maputo</div>
+  </div>
+</div>
+
+<!-- ============ SOBRE ============ -->
+<section class="section" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <div class="m1"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Equipa de dentistas da DentalCare Maputo em atendimento" loading="lazy"></div>
+      <div class="m2"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="Equipamento dentário moderno" loading="lazy"></div>
+    </div>
+    <div class="about-copy reveal" style="--d:120">
+      <span class="eyebrow">Sobre a clínica</span>
+      <h2 style="margin-top:1rem;">Uma nova forma de cuidar do seu sorriso, em Maputo.</h2>
+      <p>A DentalCare Maputo nasceu com uma missão simples: oferecer medicina dentária de nível internacional, aqui, na capital moçambicana. Combinamos uma equipa altamente qualificada com equipamentos de última geração, num ambiente pensado para o seu conforto.</p>
+      <p>Cada paciente é único. Por isso, dedicamos tempo a ouvir, explicar e desenhar um plano de tratamento personalizado, com total transparência nos passos e nos custos. Do primeiro sorriso da criança ao implante mais complexo, cuidamos de si com rigor e dedicação.</p>
+      <div class="about-stats">
+        <div><div class="n">12+</div><div class="l">Anos de experiência</div></div>
+        <div><div class="n">1.2k+</div><div class="l">Pacientes felizes</div></div>
+        <div><div class="n">8</div><div class="l">Especialidades</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section class="section" id="servicos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Os nossos serviços</span>
+      <h2>Tratamentos completos para toda a família</h2>
+      <p>Da prevenção à estética avançada, reunimos todas as especialidades num só lugar, com a tecnologia certa para cada tratamento.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc reveal" style="--d:0"><span class="num">01</span><div class="ic"><i data-lucide="stethoscope"></i></div><h3>Consulta Dentária</h3><p>Avaliação completa da saúde oral, diagnóstico rigoroso e plano de tratamento personalizado para si.</p></div>
+      <div class="svc reveal" style="--d:60"><span class="num">02</span><div class="ic"><i data-lucide="sparkles"></i></div><h3>Limpeza Dentária</h3><p>Destartarização e polimento profissional que devolvem o brilho natural e previnem doenças gengivais.</p></div>
+      <div class="svc reveal" style="--d:120"><span class="num">03</span><div class="ic"><i data-lucide="align-center"></i></div><h3>Ortodontia</h3><p>Aparelhos fixos e alinhadores transparentes para corrigir a posição dos dentes com discrição.</p></div>
+      <div class="svc reveal" style="--d:180"><span class="num">04</span><div class="ic"><i data-lucide="anchor"></i></div><h3>Implantes Dentários</h3><p>Substituição de dentes em falta com implantes de titânio duradouros, funcionais e naturais.</p></div>
+      <div class="svc reveal" style="--d:0"><span class="num">05</span><div class="ic"><i data-lucide="sun"></i></div><h3>Branqueamento Dentário</h3><p>Técnicas seguras e eficazes para um sorriso vários tons mais branco numa única sessão.</p></div>
+      <div class="svc reveal" style="--d:60"><span class="num">06</span><div class="ic"><i data-lucide="gem"></i></div><h3>Odontologia Estética</h3><p>Facetas e restaurações que harmonizam o seu sorriso com resultados naturais e elegantes.</p></div>
+      <div class="svc reveal" style="--d:120"><span class="num">07</span><div class="ic"><i data-lucide="activity"></i></div><h3>Tratamento de Canal</h3><p>Endodontia moderna e indolor que salva dentes comprometidos e alivia a dor de forma definitiva.</p></div>
+      <div class="svc reveal" style="--d:180"><span class="num">08</span><div class="ic"><i data-lucide="baby"></i></div><h3>Odontopediatria</h3><p>Cuidados dentários gentis para crianças, num ambiente acolhedor que torna a visita divertida.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUE ESCOLHER ============ -->
+<section class="section" id="porque">
+  <div class="wrap why-grid">
+    <div class="why-media reveal">
+      <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=700&q=80" alt="Consultório dentário moderno da DentalCare Maputo" loading="lazy">
+    </div>
+    <div class="why-copy reveal" style="--d:120">
+      <span class="eyebrow">Porquê a DentalCare</span>
+      <h2 style="margin-top:1rem;">Razões para confiar o seu sorriso a nós</h2>
+      <div class="why-list">
+        <div class="why-item"><div class="ic"><i data-lucide="graduation-cap"></i></div><div><h4>Dentistas qualificados</h4><p>Equipa com formação nacional e internacional, em constante atualização.</p></div></div>
+        <div class="why-item"><div class="ic"><i data-lucide="cpu"></i></div><div><h4>Tecnologia moderna</h4><p>Radiografia digital, scanner intraoral e equipamentos de última geração.</p></div></div>
+        <div class="why-item"><div class="ic"><i data-lucide="heart-handshake"></i></div><div><h4>Atendimento personalizado</h4><p>Ouvimos as suas necessidades e explicamos cada passo com clareza.</p></div></div>
+        <div class="why-item"><div class="ic"><i data-lucide="armchair"></i></div><div><h4>Ambiente confortável</h4><p>Espaços tranquilos e acolhedores para uma experiência sem stress.</p></div></div>
+        <div class="why-item"><div class="ic"><i data-lucide="shield-check"></i></div><div><h4>Segurança e higiene</h4><p>Protocolos rigorosos de esterilização em todos os tratamentos.</p></div></div>
+        <div class="why-item"><div class="ic"><i data-lucide="map-pin"></i></div><div><h4>Localização conveniente</h4><p>No coração de Maputo, com fácil acesso e estacionamento.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section class="section" id="galeria">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">A nossa clínica</span>
+      <h2>Um espaço pensado ao pormenor</h2>
+      <p>Instalações modernas, consultórios equipados e uma receção acolhedora. Conheça o ambiente onde vamos cuidar de si.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure class="tall"><img src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?auto=format&fit=crop&w=600&q=80" alt="Consultório dentário moderno" loading="lazy"></figure>
+      <figure class="wide"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Dentista a atender paciente" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1606265752439-1f18b41b4a19?auto=format&fit=crop&w=500&q=80" alt="Equipamento dentário de precisão" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&w=500&q=80" alt="Cadeira de dentista equipada" loading="lazy"></figure>
+      <figure class="wide"><img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=800&q=80" alt="Receção acolhedora da clínica dentária" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80" alt="Instrumentos dentários esterilizados" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTEMUNHOS ============ -->
+<section class="section" id="testemunhos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Testemunhos</span>
+      <h2>O que dizem os nossos pacientes</h2>
+      <p>A confiança de quem já passou pela DentalCare Maputo é o nosso maior orgulho.</p>
+    </div>
+    <div class="tst-grid">
+      <div class="tst reveal" style="--d:0">
+        <div class="stars" aria-hidden="true"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+        <blockquote>"Sempre tive medo de dentistas, mas a equipa da DentalCare mudou isso completamente. Fiz um implante sem qualquer dor e o resultado ficou impecável. Recomendo de olhos fechados."</blockquote>
+        <div class="who"><span class="av">FC</span><div><b>Fátima Come</b><span>Maputo · Implante dentário</span></div></div>
+      </div>
+      <div class="tst reveal" style="--d:100">
+        <div class="stars" aria-hidden="true"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+        <blockquote>"Levei os meus filhos para a consulta de odontopediatria e foi uma experiência ótima. As crianças adoraram e saíram a sorrir. Atendimento profissional e muito humano."</blockquote>
+        <div class="who"><span class="av">AM</span><div><b>Aníbal Mucavele</b><span>Matola · Odontopediatria</span></div></div>
+      </div>
+      <div class="tst reveal" style="--d:200">
+        <div class="stars" aria-hidden="true"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+        <blockquote>"Fiz o branqueamento antes do meu casamento e o sorriso ficou perfeito nas fotografias. Ambiente moderno, limpo e uma equipa que nos deixa completamente à vontade."</blockquote>
+        <div class="who"><span class="av">TS</span><div><b>Telma Sitoe</b><span>Maputo · Branqueamento</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESSO ============ -->
+<section class="section" id="processo">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:52ch;">
+      <span class="eyebrow">Marcar é simples</span>
+      <h2>A sua consulta em 3 passos</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal" style="--d:0"><div class="n">01</div><div class="ic"><i data-lucide="list-checks"></i></div><h3>Escolha o serviço</h3><p>Diga-nos o que precisa, desde uma limpeza de rotina a um tratamento mais completo. Ajudamos a decidir.</p></div>
+      <div class="step reveal" style="--d:120"><div class="n">02</div><div class="ic"><i data-lucide="phone-call"></i></div><h3>Entre em contacto</h3><p>Marque através do formulário, telefone ou WhatsApp. Encontramos o horário ideal para si.</p></div>
+      <div class="step reveal" style="--d:240"><div class="n">03</div><div class="ic"><i data-lucide="calendar-check"></i></div><h3>Confirme a consulta</h3><p>Receba a confirmação e venha visitar-nos. O resto deixe connosco: o seu sorriso está em boas mãos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ + FORMULÁRIO ============ -->
+<section class="section" id="contacto-faq">
+  <div class="wrap faq-form-grid">
+    <div class="reveal">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 style="margin-top:1rem;font-size:clamp(2rem,3.4vw,2.7rem);margin-bottom:1.8rem;">Tudo o que precisa de saber</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Preciso de marcação prévia ou posso ir diretamente?<i data-lucide="plus"></i></button>
+          <div class="faq-a"><div><p>Recomendamos sempre marcação prévia para garantir o horário e o especialista adequados. Em situações de urgência dentária, faça um esforço por telefonar antes: reservamos espaços diários para emergências.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Quanto custa uma consulta na DentalCare Maputo?<i data-lucide="plus"></i></button>
+          <div class="faq-a"><div><p>A primeira consulta de avaliação tem um valor acessível e inclui o diagnóstico e o plano de tratamento. Cada tratamento é orçamentado de forma transparente antes de começar, sem surpresas. Fale connosco para valores atualizados.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Qual é o horário de funcionamento?<i data-lucide="plus"></i></button>
+          <div class="faq-a"><div><p>Estamos abertos de segunda a sexta, das 08h00 às 19h00, e aos sábados das 08h00 às 13h00. Encerramos aos domingos e feriados nacionais.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Os tratamentos são dolorosos?<i data-lucide="plus"></i></button>
+          <div class="faq-a"><div><p>Utilizamos técnicas modernas de anestesia e sedação que tornam os tratamentos praticamente indolores. O seu conforto é a nossa prioridade em cada etapa.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Aceitam planos de pagamento?<i data-lucide="plus"></i></button>
+          <div class="faq-a"><div><p>Sim. Oferecemos planos de pagamento flexíveis para tornar os tratamentos mais acessíveis. Também aceitamos os principais seguros de saúde. Pergunte à nossa receção pelas opções disponíveis.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card reveal" style="--d:120" id="marcacao">
+      <form id="apptForm" novalidate>
+        <h3>Marque a sua consulta</h3>
+        <p>Preencha os dados e entramos em contacto para confirmar o seu horário.</p>
+        <div class="form-row">
+          <div class="field"><label for="nome">Nome completo</label><input type="text" id="nome" name="nome" placeholder="O seu nome" autocomplete="name" required></div>
+          <div class="field"><label for="tel">Telefone</label><input type="tel" id="tel" name="tel" placeholder="+258 84 000 0000" autocomplete="tel" required></div>
+        </div>
+        <div class="field"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email"></div>
+        <div class="form-row">
+          <div class="field"><label for="servico">Serviço pretendido</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione...</option>
+              <option>Consulta Dentária</option>
+              <option>Limpeza Dentária</option>
+              <option>Ortodontia</option>
+              <option>Implantes Dentários</option>
+              <option>Branqueamento Dentário</option>
+              <option>Odontologia Estética</option>
+              <option>Tratamento de Canal</option>
+              <option>Odontopediatria</option>
+            </select>
+          </div>
+          <div class="field"><label for="data">Data preferida</label><input type="date" id="data" name="data"></div>
+        </div>
+        <div class="field"><label for="msg">Mensagem (opcional)</label><textarea id="msg" name="msg" placeholder="Conte-nos brevemente o que precisa"></textarea></div>
+        <button type="submit" class="btn btn-primary"><i data-lucide="calendar-check"></i>Pedir marcação</button>
+        <p class="form-note">Ao enviar, entraremos em contacto por telefone ou WhatsApp para confirmar.</p>
+      </form>
+      <div class="form-success" id="formSuccess" role="status">
+        <div class="ic"><i data-lucide="check"></i></div>
+        <h3>Pedido enviado!</h3>
+        <p style="color:var(--ink-soft);margin-top:0.6rem;">Obrigado. A nossa equipa vai contactá-lo em breve para confirmar a sua consulta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTOS ============ -->
+<section class="section" id="contacto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contactos</span>
+      <h2>Estamos à sua espera em Maputo</h2>
+      <p>Visite-nos, ligue ou fale connosco no WhatsApp. Teremos todo o gosto em ajudar.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="cinfo"><div class="ic"><i data-lucide="map-pin"></i></div><div><h4>Localização</h4><p>Av. Julius Nyerere, nº 657<br>Bairro da Polana, Maputo, Moçambique</p></div></div>
+        <div class="cinfo"><div class="ic"><i data-lucide="phone"></i></div><div><h4>Telefone</h4><p><a href="tel:+258841234567">+258 84 123 4567</a></p></div></div>
+        <div class="cinfo"><div class="ic"><i data-lucide="message-circle"></i></div><div><h4>WhatsApp</h4><p><a href="https://wa.me/258841234567" target="_blank" rel="noopener">+258 84 123 4567</a></p></div></div>
+        <div class="cinfo"><div class="ic"><i data-lucide="mail"></i></div><div><h4>E-mail</h4><p><a href="mailto:ola@dentalcaremaputo.co.mz">ola@dentalcaremaputo.co.mz</a></p></div></div>
+        <div class="cinfo"><div class="ic"><i data-lucide="clock"></i></div><div><h4>Horário</h4><p>Seg a Sex: 08h00 – 19h00<br>Sábado: 08h00 – 13h00 · Domingo: encerrado</p></div></div>
+      </div>
+      <div class="map-frame reveal" style="--d:120">
+        <iframe src="https://www.google.com/maps?q=Avenida+Julius+Nyerere,+Maputo,+Mozambique&output=embed" loading="lazy" title="Localização da DentalCare Maputo no mapa" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#inicio" class="brand"><span class="mark"><i data-lucide="sparkles"></i></span><span>DentalCare<small>Maputo</small></span></a>
+        <p class="foot-about">Medicina dentária premium no coração de Maputo. Cuidamos do seu sorriso com tecnologia, rigor e um atendimento verdadeiramente humano.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="https://wa.me/258841234567" aria-label="WhatsApp" target="_blank" rel="noopener"><i data-lucide="message-circle"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Navegação</h5>
+        <div class="foot-links">
+          <a href="#sobre">Sobre a Clínica</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#porque">Porquê nós</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#testemunhos">Testemunhos</a>
+        </div>
+      </div>
+      <div>
+        <h5>Serviços</h5>
+        <div class="foot-links">
+          <a href="#servicos">Implantes Dentários</a>
+          <a href="#servicos">Ortodontia</a>
+          <a href="#servicos">Branqueamento</a>
+          <a href="#servicos">Odontologia Estética</a>
+          <a href="#servicos">Odontopediatria</a>
+        </div>
+      </div>
+      <div>
+        <h5>Contactos</h5>
+        <ul class="foot-contact">
+          <li><i data-lucide="map-pin"></i>Av. Julius Nyerere, nº 657, Polana, Maputo</li>
+          <li><i data-lucide="phone"></i>+258 84 123 4567</li>
+          <li><i data-lucide="mail"></i>ola@dentalcaremaputo.co.mz</li>
+          <li><i data-lucide="clock"></i>Seg–Sex 08h–19h · Sáb 08h–13h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 DentalCare Maputo. Todos os direitos reservados.</span>
+      <span>Feito com cuidado em Maputo, Moçambique.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/258841234567" class="fab" aria-label="Falar no WhatsApp" target="_blank" rel="noopener"><i data-lucide="message-circle"></i></a>
+
+<script>
+  lucide.createIcons();
+
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu
+  const mm = document.getElementById('mobileMenu');
+  const toggle = document.getElementById('navToggle');
+  const openMenu = () => { mm.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+  const closeMenu = () => { mm.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+  toggle.addEventListener('click', openMenu);
+  document.getElementById('mobileClose').addEventListener('click', closeMenu);
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  // Scroll reveal with stagger
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Scrollspy — highlight active nav link
+  const navLinks = Array.from(document.querySelectorAll('#navLinks a'));
+  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = '#' + e.target.id;
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => spy.observe(s));
+
+  // Form submit + basic validation
+  const form = document.getElementById('apptForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      const firstInvalid = form.querySelector(':invalid');
+      if (firstInvalid) firstInvalid.focus();
+      form.reportValidity();
+      return;
+    }
+    form.style.display = 'none';
+    const ok = document.getElementById('formSuccess');
+    ok.classList.add('show');
+    lucide.createIcons();
+    ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Fallback for broken images — soft branded placeholder
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.style.background = 'linear-gradient(135deg, oklch(0.94 0.028 232), oklch(0.78 0.095 232))';
+      img.removeAttribute('src');
+    }, { once: true });
+  });
+</script>
+</body>
+</html>
